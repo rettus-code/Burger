@@ -29,7 +29,7 @@ router.post("/burgers/create", function(req, res) {
     name: req.body.name
   }).then(function(data) {
       console.log(data);
-      res.redirect("/");
+      res.redirect("/burgers");
     });
 });
 
@@ -44,7 +44,7 @@ router.put("/burgers/update/:id", function(req, res) {
     }
   }
   ).then(function(data) {
-    res.json("/");
+    res.json("/burgers");
   });
 });
 

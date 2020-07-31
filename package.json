@@ -1,10 +1,9 @@
 {
-  "name": "node_what_todo",
+  "name": "burgers",
   "version": "1.0.0",
-  "description": "-Node \r -Express \r -MySQL \r -Handlebars \r -Jquery",
+  "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "author": "",
@@ -15,8 +14,5 @@
     "mysql": "^2.12.0",
     "mysql2": "^2.1.0",
     "sequelize": "^4.41.2"
-  },
-  "devDependencies": {
-    "handlebars-helper-css": "^0.1.0"
   }
 }
