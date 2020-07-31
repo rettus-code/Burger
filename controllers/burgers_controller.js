@@ -16,10 +16,10 @@ router.get("/burgers", function(req, res) {
 
   db.Burger.findAll()
 
-    .then(function(dbBurger) {
-      console.log(dbBurger);
-      const dbBurgersJson = dbBurger.map(burger=>burger.toJSON());
-      var hbsObject = { burger: dbBurgersJson };
+    .then(function(data) {
+      console.log(data);
+      const burgJson = data.map(burger=>burger.toJSON());
+      var hbsObject = { burger: burgJson };
       return res.render("index", hbsObject);
     });
 });
@@ -27,8 +27,8 @@ router.get("/burgers", function(req, res) {
 router.post("/burgers/create", function(req, res) {
   db.Burger.create({
     name: req.body.name
-  }).then(function(dbBurger) {
-      console.log(dbBurger);
+  }).then(function(data) {
+      console.log(data);
       res.redirect("/");
     });
 });
@@ -43,7 +43,7 @@ router.put("/burgers/update/:id", function(req, res) {
       id: req.params.id
     }
   }
-  ).then(function(dbBurger) {
+  ).then(function(data) {
     res.json("/");
   });
 });
