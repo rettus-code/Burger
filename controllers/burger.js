@@ -7,8 +7,14 @@ var db = require("../models");
 
 
 router.get("/", function(req, res) {
-  
-  res.redirect("/burgers");
+  db.Burger.findAll()
+
+  .then(function(data) {
+    console.log(data);
+    const burgJson = data.map(burger=>burger.toJSON());
+    var hbsObject = { burger: burgJson };
+    return res.render("index", hbsObject);
+  });
 });
 
 
